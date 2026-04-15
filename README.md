@@ -5,26 +5,6 @@ A Flask-based web service that fetches, cleans, and analyzes text from Project G
 
 ---
 
-## 🖥️ Screenshots
-
-### Working Application
-
-| Alice in Wonderland | Moby Dick |
-|---|---|
-| ![Alice in Wonderland](screenshots/Alice_in_Wonderland.png) | ![Moby Dick](screenshots/moby_dick_.png) |
-
-| Frankenstein | Pride and Prejudice |
-|---|---|
-| ![Frankenstein](screenshots/Frankenstein.png) | ![Pride and Prejudice](screenshots/pride_and_prejudice.png) |
-
-### Terminal Output
-
-| starter_preprocess.py | app.py | test_setup.py |
-|---|---|---|
-| ![starter_preprocess](screenshots/starter_preprocess_o_p.png) | ![app.py](screenshots/app_py_o_p.png) | ![test_setup](screenshots/test_setup_o_p.png) |
-
----
-
 ## 🚀 Setup Instructions
 
 ### 1. Fork & Open in Codespaces
@@ -89,7 +69,7 @@ POST /api/clean
         "total_sentences": 7356,
         "avg_word_length": 4.5,
         "avg_sentence_length": 17.4,
-        "most_common_words": [["the", 4507], ["to", 4243], ...]
+        "most_common_words": [["the", 4507], ["to", 4243]]
     },
     "summary": "First 3 sentences of the book..."
 }
@@ -119,5 +99,53 @@ POST /api/clean
 | `beautifulsoup4` | HTML parsing utilities |
 | `nltk` | Natural language processing toolkit |
 | `python-dotenv` | Environment variable management |
+
+---
+
+## 🖥️ Screenshots
+
+### Terminal Output
+
+**test_setup.py — Environment Setup Verification**
+
+![test_setup output](screenshots/test_setup_o_p.png)
+
+---
+
+**starter_preprocess.py — Basic Functionality Test**
+
+![starter_preprocess output](screenshots/starter_preprocess_o_p.png)
+
+---
+
+**app.py — Flask Server Running**
+
+![app.py output](screenshots/app_py_o_p.png)
+
+---
+
+### Web Application — Analysis Results
+
+**Pride and Prejudice**
+
+![Pride and Prejudice](screenshots/pride_and_prejudice.png)
+
+---
+
+**Frankenstein**
+
+![Frankenstein](screenshots/Frankenstein.png)
+
+---
+
+**Alice in Wonderland**
+
+![Alice in Wonderland](screenshots/Alice_in_Wonderland.png)
+
+---
+
+**Moby Dick**
+
+![Moby Dick](screenshots/moby_dick_.png)
 
 ---
