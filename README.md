@@ -108,19 +108,19 @@ POST /api/clean
 
 **test_setup.py — Environment Setup Verification**
 
-![test_setup output](screenshots/test_setup_o_p.png)
+![test_setup output](screenshots/test_setup%20o%3Ap.png)
 
 ---
 
 **starter_preprocess.py — Basic Functionality Test**
 
-![starter_preprocess output](screenshots/starter_preprocess_o_p.png)
+![starter_preprocess output](screenshots/starter_preprocess%20o%3Ap.png)
 
 ---
 
 **app.py — Flask Server Running**
 
-![app.py output](screenshots/app_py_o_p.png)
+![app.py output](screenshots/app.py%20o%3Ap.png)
 
 ---
 
@@ -128,7 +128,7 @@ POST /api/clean
 
 **Pride and Prejudice**
 
-![Pride and Prejudice](screenshots/pride_and_prejudice.png)
+![Pride and Prejudice](screenshots/pride%20and%20prejudice.png)
 
 ---
 
@@ -140,12 +140,12 @@ POST /api/clean
 
 **Alice in Wonderland**
 
-![Alice in Wonderland](screenshots/Alice_in_Wonderland.png)
+![Alice in Wonderland](screenshots/Alice%20in%20Wonderland.png)
 
 ---
 
 **Moby Dick**
 
-![Moby Dick](screenshots/moby_dick_.png)
+![Moby Dick](screenshots/moby%20dick%20.png)
 
 ---
