@@ -64,7 +64,7 @@ class TextPreprocessor:
         
         # Standardize quotes and dashes
         text = re.sub(r'[""]', '"', text)
-        text = re.sub(r'['']', "'", text)
+        text = re.sub(u'[\u2018\u2019]', "'", text)
         text = re.sub(r'—|–', '-', text)
         
         if preserve_sentences:
@@ -131,7 +131,14 @@ class TextPreprocessor:
         """
         # Hint: Use requests.get() and validate that it's a .txt URL
         # Don't forget error handling!
-        raise NotImplementedError("Implement this for Part 2 of the assignment")
+        if not url.endswith('.txt'):
+            raise ValueError("URL must point to a .txt file")
+        
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        response.encoding = 'utf-8'
+        
+        return response.text
     
     def get_text_statistics(self, text: str) -> Dict:
         """
@@ -146,7 +153,23 @@ class TextPreprocessor:
             - most_common_words (top 10)
         """
         # Hint: Use the existing tokenize methods and Counter
-        raise NotImplementedError("Implement this for Part 2 of the assignment")
+        words = self.tokenize_words(text)
+        sentences = self.tokenize_sentences(text)
+
+        avg_word_length = sum(len(w) for w in words) / len(words) if words else 0
+        sent_lengths = self.get_sentence_lengths(sentences)
+        avg_sentence_length = sum(sent_lengths) / len(sent_lengths) if sent_lengths else 0
+
+        word_counts = Counter(words)
+
+        return {
+            "total_characters": len(text),
+            "total_words": len(words),
+            "total_sentences": len(sentences),
+            "avg_word_length": round(avg_word_length, 2),
+            "avg_sentence_length": round(avg_sentence_length, 2),
+            "most_common_words": word_counts.most_common(10)
+        }
     
     def create_summary(self, text: str, num_sentences: int = 3) -> str:
         """
@@ -160,7 +183,9 @@ class TextPreprocessor:
             Summary string
         """
         # Hint: Use tokenize_sentences() and join the first N sentences
-        raise NotImplementedError("Implement this for Part 2 of the assignment")
+        sentences = self.tokenize_sentences(text)
+        summary_sentences = sentences[:num_sentences]
+        return '. '.join(summary_sentences) + '.'
 
 
 class FrequencyAnalyzer:
